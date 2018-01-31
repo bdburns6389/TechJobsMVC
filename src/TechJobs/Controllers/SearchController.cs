@@ -19,13 +19,9 @@ namespace TechJobs.Controllers
         {
             List<Dictionary<string, string>> jobs = new List<Dictionary<string, string>>();
             if (searchType.Equals("all"))
-            {
                 jobs = JobData.FindByValue(searchTerm);
-            }
             else
-            {
                 jobs = JobData.FindByColumnAndValue(searchType, searchTerm);
-            }
             foreach (var kvp in jobs)
             {
                 if (kvp.ContainsKey(searchTerm))
