@@ -34,17 +34,17 @@ namespace TechJobs.Controllers
             }
             else
             {
-                List<Dictionary<string, string>> items = JobData.FindByColumnAndValue(searchType, searchTerm);
-                foreach (var kvp in items)
+                List<Dictionary<string, string>> jobs = JobData.FindByColumnAndValue(searchType, searchTerm);
+                foreach (var kvp in jobs)
                 {
                     if (kvp.ContainsKey(searchTerm))
                     {
-                        items.Add(kvp);
+                        jobs.Add(kvp);
                         break;
                     }
                 }
-                ViewBag.items = items;
-                ViewBag.columns = ListController.columnChoices;//Was told to add, but may not be correct.
+                ViewBag.jobs = jobs;
+                ViewBag.columns = ListController.columnChoices;
                 return View("Index");
             }   
         }
