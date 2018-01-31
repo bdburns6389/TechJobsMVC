@@ -37,16 +37,13 @@
 
     // Table should be in dictionary loop, with cells being in KeyValuePair loop.
     @foreach (Dictionary<string, string> jobs in ViewBag.jobs)
-    {
+    {    <table class="job-listing">
         @foreach (KeyValuePair<string, string> job in jobs)
         {
-            <table class="job-listing">
                 <tr>
-                    <td>@job.Key @job.Value</td>
+                    <td>@job.Key</td>
+                    <td>@job.Value</td>
                 </tr>
-            </table>
-            <br />
-            <br />
-        }
+        }</table>
     }
 }
