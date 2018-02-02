@@ -27,6 +27,7 @@ namespace TechJobs.Controllers
                 if (kvp.ContainsKey(searchTerm))
                 {
                     jobs.Add(kvp);
+                    ViewBag.searchTerm = searchTerm;
                     break;
                 }
             }
